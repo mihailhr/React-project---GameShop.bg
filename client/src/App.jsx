@@ -1,10 +1,12 @@
 import {Route,Routes} from "react-router-dom"
-import Content from "./Components/Content"
+
 import Footer from "./Components/Footer"
 import Navbar from "./Components/Navbar"
 import "./styles.css"
 import Home from "./Components/Home"
+import { connecting } from "./backendCommunicationFunctions"
 export default function App(){
+  connecting()
   return(
     <div>
       <Navbar/>

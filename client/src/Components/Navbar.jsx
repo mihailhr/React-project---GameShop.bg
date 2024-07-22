@@ -8,7 +8,7 @@ export default function Navbar(){
             <ul className="mainNav">
                 <li><NavLink to={"/"} >Home</NavLink></li>
                 <li><NavLink to={"/catalog"}>Catalog</NavLink></li>
-                <li><NavLink to={"/createNewGame"}>Publish your games</NavLink></li>
+                {/* <li><NavLink to={"/createNewGame"}>Publish your games</NavLink></li> */}
                 <li><NavLink to={"/about"}>About</NavLink></li>
             </ul>
             <ul className="registerNav">
