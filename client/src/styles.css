@@ -35,9 +35,16 @@ overflow-x: hidden;}
     right: 30px;
 }
 
-.navbar a:hover{
-    border-bottom: 2px solid greenyellow;
-    padding-bottom: 10px;
+
+.navbar a.active{
+    /* border-bottom: 4px solid green;
+    padding-bottom: 5px;
+    color: red; */
+
+    background-color: #1D597D;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
 }
 .content{
     width: 100vw;
@@ -53,4 +60,10 @@ footer{
     font-size: 20px;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.home{
+    width: 100vw;
+    height: 120vh;
 }
