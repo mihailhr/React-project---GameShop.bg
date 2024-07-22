@@ -17,7 +17,7 @@ overflow-x: hidden;}
     text-align: center;
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     top: 60px;
 }
 .navbar a{
@@ -30,7 +30,7 @@ overflow-x: hidden;}
 }
 .registerNav{
     display: flex;
-    position: fixed;
+    position: absolute;
     top: 60px;
     right: 30px;
 }
@@ -38,4 +38,19 @@ overflow-x: hidden;}
 .navbar a:hover{
     border-bottom: 2px solid greenyellow;
     padding-bottom: 10px;
+}
+.content{
+    width: 100vw;
+    height: 120vh;
+}
+footer{
+    display: flex;
+    width: 100vw;
+    height: 5vh;
+    justify-content: center;
+    background-color: #1D597D;
+    color: white;
+    font-size: 20px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
