@@ -142,3 +142,163 @@ align-self: center;
     border-bottom: 3px solid white;
     padding-bottom: 20px;
 }
+
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the track */
+    border-radius: 10px; /* Rounded corners for the track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scroll thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the thumb when hovered */
+  }
+
+  .register{
+    height: 65vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #1D597D;
+    text-align: center;
+    padding-top: 80px;
+    color: white;
+    border-radius: 40px;
+    
+  }
+  .registerDiv{
+    background-color: orange;
+    display: flex;
+    width: 100vw;
+    height: 69.7vh;
+    padding-top: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    
+  }
+
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .question-mark {
+    font-size: 24px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the icon */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow pointing down */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  
+  .question{
+    width: 50vw;
+    background-color: #1D597D;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .logout button{
+    height: 5vh;
+    width: 5vw;
+  }
+
+
+  .login{
+    width: 100vw;
+    height: 69.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+  }
+
+  .login form{
+    background-color: #1D597D;
+    width: 50vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 40px;
+  }
+  .logout{width: 100vw;
+  height: 69.7vh;
+background-color: orange;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;}
+.logout article{
+  width: 50vw;
+  height: 40vh;
+  background-color: #1D597D;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 20px;
+}
