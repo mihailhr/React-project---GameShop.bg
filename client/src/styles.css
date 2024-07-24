@@ -296,7 +296,9 @@ align-self: center;
     height: 5vh;
     width: 5vw;
   }
-
+  .fields a{
+    text-decoration-line: none;
+  }
 
   .login{
     width: 100vw;

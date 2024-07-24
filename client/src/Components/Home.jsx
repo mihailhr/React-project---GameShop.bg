@@ -21,7 +21,8 @@ export default function Home(){
                     <img src="/money.jpg" alt="" />
                     </div>
                     <div className="gamer">
-                        <h3>Become one of us</h3>
+                        <Link to={"/about"}><h3>Become one of us</h3></Link>
+                        
                         <img src="/join.jpg" alt="" />
                     </div>
                 </section>

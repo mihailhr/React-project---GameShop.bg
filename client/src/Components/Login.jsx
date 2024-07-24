@@ -23,7 +23,7 @@ export default function Login(prop){
                 <input type="submit" />
             </form>
             <section className="additional">
-                <h3>Don't have an account yet?</h3>
+                <h3>{"Don't"} have an account yet?</h3>
                 <button onClick={handleClick}>Register</button>
             </section>
         </div>
