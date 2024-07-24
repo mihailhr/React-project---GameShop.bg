@@ -1,13 +1,18 @@
 import {useNavigate} from "react-router-dom"
-
+import { useAuth } from "../authContext"
+import {Navigate} from "react-router-dom"
 
 
 export default function Register(prop){
     const navigate=useNavigate()
+    const {auth}=useAuth()
     function redirectToLogin(){
         navigate("/login")
     }
     return(
+        auth?
+        <Navigate to="/"/>
+        :
         <div className="registerDiv">
             
         <form className="register"  onSubmit={prop.handleSubmit}>

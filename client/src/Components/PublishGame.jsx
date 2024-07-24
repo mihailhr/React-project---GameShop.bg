@@ -1,5 +1,11 @@
+import {Navigate} from "react-router-dom"
+import { useAuth } from "../authContext"
+
 export default function PublishGame(){
+
+    const {auth} =useAuth()
     return( 
+        auth?
         <div className="publish">
             <article>
                 <h1>
@@ -30,6 +36,7 @@ export default function PublishGame(){
                     <input type="submit" />
                 </form>
             </article>
-        </div>
+        </div>:
+        <div className="publish"><h1>You have to be logged in to publish games</h1></div>
     )
 }
