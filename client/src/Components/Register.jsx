@@ -1,12 +1,17 @@
-
+import {useNavigate} from "react-router-dom"
 
 
 
 export default function Register(prop){
+    const navigate=useNavigate()
+    function redirectToLogin(){
+        navigate("/login")
+    }
     return(
         <div className="registerDiv">
+            
         <form className="register"  onSubmit={prop.handleSubmit}>
-
+        <h1>Create account</h1>
             <label>Username </label> <input type="text" name="username" value={prop.registerFormData.username} onChange={prop.handleChanges} />   <br />
             
             <label>Email</label> 
@@ -19,6 +24,19 @@ export default function Register(prop){
             <input type="submit" /> 
 
         </form>
+
+        <div className="redirect">
+            <h1>Registration requirements</h1>
+            <ul>
+                <li>Your username should be at least 5 characters long.</li>
+                <li>Enter a valid email that is longer than 7 characters.</li>
+                <li>Minimal allowed length for passwords - 8 characters.</li>
+                
+            </ul>
+
+        <p>Already have an account?</p>
+        <button onClick={redirectToLogin}>Log in</button>
+        </div>
         </div>
     )
 }

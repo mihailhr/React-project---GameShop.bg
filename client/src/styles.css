@@ -179,7 +179,7 @@ align-self: center;
     height: 65vh;
     width: 40vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     padding-bottom: 80px;
@@ -197,12 +197,39 @@ align-self: center;
   .registerDiv{
     background-color: orange;
     display: flex;
+    
     width: 100vw;
     height: 69.7vh;
     padding-top: 20px;
     box-sizing: border-box;
-    justify-content: center;
+    justify-content: space-evenly;
     
+  }
+  .registerDiv .register h1{
+    padding-bottom: 20px;
+  }
+ 
+  .registerDiv .redirect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1D597D;
+    text-align: center;
+    height: 40vh;
+    padding: 40px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 40px;
+  }
+  .registerDiv .redirect p{
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+  .registerDiv .redirect h1{
+    padding-bottom: 20px;
   }
 
   .tooltip-container {
@@ -278,6 +305,8 @@ align-self: center;
     justify-content: center;
     align-items: center;
     background-color: orange;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .login form{
@@ -293,6 +322,25 @@ align-self: center;
     font-weight: 600;
     font-size: 20px;
     border-radius: 40px;
+  }
+  .login .additional{
+    width: 20vw;
+    height: 9vh;
+    background-color: #1D597D;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+  }
+  .login .additional button{
+    margin-top: 5px;
+  }
+  .login form h1{
+padding-bottom: 20px;
   }
   .logout{width: 100vw;
   height: 69.7vh;
@@ -348,8 +396,9 @@ align-items: center;}
 }
 .about{
   width: 100vw;
+  height: 150vh;
   
-  background-color: white;
+  background-color: orange;
 }
 .aboutUpper{
   height: 80vh;
@@ -370,6 +419,7 @@ align-items: center;}
   align-items: center;
   height: 50vh;
   margin: 100px 0px;
+  
 }
 .aboutLower .text{
   width: 60vw;
@@ -402,6 +452,6 @@ border-radius: 20px;
   
 }
 .aboutLower .logos a{
-  color: orange;
+  color: #1D597D;
 }
 
