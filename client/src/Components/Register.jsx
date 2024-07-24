@@ -11,8 +11,7 @@ export default function Register(prop){
             
             <label>Email</label> 
             <input type="email" name="email" value={prop.registerFormData.email} onChange={prop.handleChanges} /> <br />
-            <label>Age</label> 
-            <input type="number" name="age" value={prop.registerFormData.age} onChange={prop.handleChanges} /> <br />
+            
             <label>Password</label> 
             <input type="password" name="password" value={prop.registerFormData.password} onChange={prop.handleChanges}/> <br />
             <label>Confirm password</label> 

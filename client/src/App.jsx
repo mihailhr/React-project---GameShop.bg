@@ -14,13 +14,15 @@ import { loginAxios, registerAxios } from "./backendCommunicationFunctions";
 
 import { useAuth } from "./authContext";
 import Login from "./Components/Login";
+import PublishGame from "./Components/PublishGame";
+import MyAccount from "./Components/MyAccount";
+import About from "./Components/About";
 
 export default function App() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
   const [registerForm, setRegisterForm] = useState({
     username: "",
-    age: 0,
     email: "",
     password: "",
     rePass: "",
@@ -44,6 +46,7 @@ export default function App() {
       if (serverRes === 200) {
         
         setAuth(true);
+        
         setLoginForm({
           username: "",
           password: "",
@@ -74,7 +77,7 @@ export default function App() {
         setAuth(true);
         setRegisterForm({
           username: "",
-          age: 0,
+          
           email: "",
           password: "",
           rePass: "",
@@ -100,12 +103,10 @@ export default function App() {
           }
         />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/login" element={<Login 
-        loginForm={loginForm}
-        handleChanges={handleLoginChanges}
-        handleSubmit={handleLoginSubmit}
-        
-        />} />
+        <Route path="/login" element={<Login  loginForm={loginForm} handleChanges={handleLoginChanges} handleSubmit={handleLoginSubmit} />} />
+        <Route path="/createNewGame" element={<PublishGame/>}/>
+        <Route path="/myAccount" element={<MyAccount/>}/>
+        <Route path="/about" element={<About/>}/>
       </Routes>
 
       <Footer />

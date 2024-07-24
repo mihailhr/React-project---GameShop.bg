@@ -25,6 +25,8 @@ export default function Home(){
                         <img src="/join.jpg" alt="" />
                     </div>
                 </section>
+                <img  className="buttons" src="/playstation-2-playstation-4-playstation-3-playstation-controller-button-game-buttorn-b4e62c91af77508bd194018c2de1ac58.png" alt="" />
+                <img  className="arrows" src="/pngwing.com.png" alt="" />
         </div>
         
     )

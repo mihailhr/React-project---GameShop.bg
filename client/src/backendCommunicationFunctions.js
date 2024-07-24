@@ -17,12 +17,16 @@ async function registerAxios(formData){
         return response.status
     }
 }
-async function checkAuth(setUserLoggedIn) {
+async function checkAuth(setUserLoggedIn,setUser) {
     try {
         const response = await axios.post(serverInitialPort + "auth", {}, { withCredentials: true });
         if (response.status === 200) {
             setUserLoggedIn(true);
             console.log("Logged in");
+            console.log(response.data)
+            setUser(response.data)
+            
+
         } else {
             setUserLoggedIn(false);
             console.log("Not logged in");

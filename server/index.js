@@ -69,15 +69,17 @@ app.post("/auth",async (req,res)=>{
     if(!verifyingCookie){
         return res.status(404)
     }
-    console.log(verifyingCookie)
+    
     const findingUser=await User.find({username:verifyingCookie})
     if(!findingUser){
         return res.status(404).send("No such user")
     }
-    res.status(200).send("All good")
+    res.status(200).send(verifyingCookie)
 
 })
-
+app.post("/publishGame",async (req,res)=>{
+    console.log(req.body)
+})
 mongoose.connect("mongodb://localhost:27017/gameShop")
     .then(() => {
         app.listen(port, () => {

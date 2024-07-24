@@ -11,10 +11,6 @@ async function checkRegister(registerFormData,setRegisterValid){
       setRegisterValid(false)
       console.log("2")
       return
-    }if(registerFormData.age==""){
-      setRegisterValid(false)
-      console.log("3")
-      return
     }if(registerFormData.password==""){
       setRegisterValid(false)
       console.log("4")
@@ -29,11 +25,7 @@ async function checkRegister(registerFormData,setRegisterValid){
       console.log("6")
       return
     }
-    if(registerFormData.age<5 || registerFormData.age>125){
-      setRegisterValid(false)
-      console.log("7")
-      return
-    }
+    
     if(registerFormData.email.length<8){
       setRegisterValid(false)
       console.log("8")

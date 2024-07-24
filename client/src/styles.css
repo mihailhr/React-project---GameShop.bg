@@ -86,16 +86,30 @@ footer{
     
 }
 .home video{
-    width: 65vw;
-    height: 60vh;
+    width: 80vw;
+    height: 68vh;
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
+.buttons{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 340px;
+  right: 154px;
+}
+.arrows{
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 340px;
+  left: 157px;
+}
 
-.videoArticle{width: 55vw;
-height: 70vh;
+.videoArticle{width: 80vw;
+height: 75vh;
 background-color: #1D597D;
 border-radius: 20px;
 display: flex;
@@ -108,7 +122,7 @@ align-self: center;
 
 .fields{
     background-color: orange;
-    height: 62vh;
+    height: 72vh;
     width: 100vw;
     display: flex;
     justify-content: space-around;
@@ -302,3 +316,92 @@ align-items: center;}
     font-size: 20px;
     gap: 20px;
 }
+
+
+.publish{
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+}
+.publish article{
+  height: 70vh;
+  width: 70vw;
+  background-color: #1D597D;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 100px;
+}
+.publish h1{
+  align-self: center;
+}
+.about{
+  width: 100vw;
+  
+  background-color: white;
+}
+.aboutUpper{
+  height: 80vh;
+  width: 100vw;
+  
+  box-sizing: border-box;
+  background-color: #1D597D;
+ 
+}
+.aboutUpper img{
+  width: 100vw;
+  height: 80vh;
+}
+.aboutLower{
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  align-items: center;
+  height: 50vh;
+  margin: 100px 0px;
+}
+.aboutLower .text{
+  width: 60vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  
+  gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  background-color: #1D597D;
+  margin: 30px 0px;
+  border-radius: 40px;
+  padding: 10px 30px;
+}
+.aboutLower .text p{
+text-indent: 20px;
+
+color: white;
+font-size: 20px;
+border-radius: 20px;
+}
+.aboutLower .logos{
+  display: flex;
+  flex-direction: column;
+  font-size: 90px;
+  
+  
+}
+.aboutLower .logos a{
+  color: orange;
+}
+
