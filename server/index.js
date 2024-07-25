@@ -92,6 +92,21 @@ app.get("/catalog",async (req,res)=>{
         
     }
 })
+app.post("/getDetails", async (req,res)=>{
+    console.log(req.body)
+    try {
+        const findingGameDetails=await Game.findOne({_id:req.body.id})
+        if(!findingGameDetails){
+            console.log("id incorrect")
+            return res.status(404).send("No such game")
+        }
+        return res.status(200).send(findingGameDetails)
+    } catch (error) {
+        console.log("problem here")
+        return res.status(404).send("Problem")
+    }
+    
+})
 
 app.post("/createNewGame",async (req,res)=>{
     try {

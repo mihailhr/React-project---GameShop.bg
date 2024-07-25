@@ -19,6 +19,7 @@ import MyAccount from "./Components/MyAccount";
 import About from "./Components/About";
 import Catalog from "./Components/Catalog";
 import checkGame from "./validators/gameValidator";
+import GameDetails from "./Components/GameDetails";
 
 export default function App() {
   const navigate = useNavigate();
@@ -135,6 +136,7 @@ export default function App() {
         <Route path="/myAccount" element={<MyAccount/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/catalog" element={<Catalog/>}/>
+        <Route path="/catalog/:id" element={<GameDetails/>}/>
       </Routes>
 
       <Footer />

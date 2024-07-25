@@ -58,4 +58,11 @@ async function getAllGamesAxios(){
     return response.data
 }
 
-export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios}
+async function getGameDetailsAxios(id){
+    console.log(id)
+    const response=await axios.post(serverInitialPort+"getDetails",{id})
+    return response.data
+}
+
+
+export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios}
