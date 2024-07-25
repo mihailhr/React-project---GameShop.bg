@@ -457,3 +457,20 @@ border-radius: 20px;
   color: #1D597D;
 }
 
+.catalog{
+  min-height: 100vh;
+  width: 100vw;
+}
+.catalog .title{
+  width: 100vw;
+  background-color: #1D597D;
+  color: white;
+  height: 8vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+

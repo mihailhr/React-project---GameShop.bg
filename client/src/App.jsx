@@ -10,17 +10,19 @@ import Register from "./Components/Register";
 import { useState } from "react";
 import checkRegister from "./validators/registerValidator";
 import Logout from "./Components/Logout";
-import { loginAxios, registerAxios } from "./backendCommunicationFunctions";
+import { createGameAxios, loginAxios, registerAxios } from "./backendCommunicationFunctions";
 
 import { useAuth } from "./authContext";
 import Login from "./Components/Login";
 import PublishGame from "./Components/PublishGame";
 import MyAccount from "./Components/MyAccount";
 import About from "./Components/About";
+import Catalog from "./Components/Catalog";
+import checkGame from "./validators/gameValidator";
 
 export default function App() {
   const navigate = useNavigate();
-  const { auth, setAuth } = useAuth();
+  const { auth, setAuth,user } = useAuth();
   const [registerForm, setRegisterForm] = useState({
     username: "",
     email: "",
@@ -86,7 +88,32 @@ export default function App() {
       navigate("/");
     }
   }
+   
 
+  const [gameForm,setGameForm]=useState({name:"",category:"sports",mainImage:"",secondaryImage:"",trailer:"",description:"",price:""})
+  const[isGameValid,setIsGameValid]=useState(false)
+
+  function handleGameChanges(e){
+    const {name,value}=e.target
+    setGameForm({
+      ...gameForm,
+      [name]:value
+    })
+  }
+
+  async function handleGameSubmit(e){
+    e.preventDefault()
+    await checkGame(gameForm,setIsGameValid)
+    if(isGameValid){
+      gameForm.creator=user
+      const creatingGame=await createGameAxios(gameForm)
+      
+        console.log("Game created")
+        setGameForm({name:"",category:"sports",mainImage:"",secondaryImage:"",trailer:"",description:"",price:""})
+        navigate("/catalog")
+      
+    }
+  }
   return (
     <div>
       <Navbar />
@@ -104,9 +131,10 @@ export default function App() {
         />
         <Route path="/logout" element={<Logout />} />
         <Route path="/login" element={<Login  loginForm={loginForm} handleChanges={handleLoginChanges} handleSubmit={handleLoginSubmit} />} />
-        <Route path="/createNewGame" element={<PublishGame/>}/>
+        <Route path="/createNewGame" element={<PublishGame handleChanges={handleGameChanges} formData={gameForm} handleSubmit={handleGameSubmit}/>}/>
         <Route path="/myAccount" element={<MyAccount/>}/>
         <Route path="/about" element={<About/>}/>
+        <Route path="/catalog" element={<Catalog/>}/>
       </Routes>
 
       <Footer />

@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const { User } = require("./mongooseModels");
+const { User, Game } = require("./mongooseModels");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -79,6 +79,19 @@ app.post("/auth",async (req,res)=>{
 })
 app.post("/publishGame",async (req,res)=>{
     console.log(req.body)
+})
+
+
+app.post("/createNewGame",async (req,res)=>{
+    try {
+        const creatingGame=await Game.create(req.body)
+        if(!creatingGame){
+            return res.status(404).send("Problem")
+        }
+        return res.status(200).send("Game created")
+    } catch (error) {
+        return res.status(404).send(error)
+    }
 })
 mongoose.connect("mongodb://localhost:27017/gameShop")
     .then(() => {

@@ -48,6 +48,9 @@ async function loginAxios(formData){
         return response.status
     }
 }
+async function createGameAxios(formData){
+    const response=await axios.post(serverInitialPort+"createNewGame",formData)
+    console.log(response)
+}
 
-
-export {registerAxios,checkAuth,loginAxios}
+export {registerAxios,checkAuth,loginAxios,createGameAxios}

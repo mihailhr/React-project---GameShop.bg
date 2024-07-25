@@ -1,7 +1,7 @@
 
 import { useAuth } from "../authContext"
 
-export default function PublishGame(){
+export default function PublishGame(prop){
 
     const {auth} =useAuth()
     return( 
@@ -11,12 +11,12 @@ export default function PublishGame(){
                 <h1>
                     Publish any game you want to sell
                 </h1>
-                <form >
+                <form onSubmit={prop.handleSubmit}>
                     <label>Game name</label> <br />
-                    <input type="text" name="name" required /> <br />
+                    <input type="text" name="name" value={prop.formData.name} onChange={prop.handleChanges} required /> <br />
                     <label>Category</label> <br />
-                    <select name="category" required> 
-                        <option value="sports">Sports</option>
+                    <select name="category" value={prop.formData.category} onChange={prop.handleChanges}  required> 
+                        <option value="sports" >Sports</option>
                         <option value="action">Action</option>
                         <option value="horror">Horror</option>
                         <option value="adventure">Adventure</option>
@@ -24,15 +24,15 @@ export default function PublishGame(){
                         <option value="other">Other</option>
                     </select> <br />
                     <label >Main image</label> <br />
-                    <input type="text" name="mainImage" required/><br />
+                    <input type="text" name="mainImage" value={prop.formData.mainImage} onChange={prop.handleChanges} required/><br />
                     <label >Secondary image</label><br />
-                    <input type="text" name="secondaryImage" required/><br />
+                    <input type="text" name="secondaryImage" value={prop.formData.secondaryImage} onChange={prop.handleChanges} required/><br />
                     <label >Trailer</label><br />
-                    <input type="text" name="trailer"  required/><br />
+                    <input type="text" name="trailer" value={prop.formData.trailer} onChange={prop.handleChanges} required/><br />
                     <label>Description</label><br />
-                    <input type="text" name="description" required/><br />
+                    <input type="text" name="description" value={prop.formData.description} onChange={prop.handleChanges} required/><br />
                     <label >Price</label><br />
-                    <input type="number" required name="price"  /><br />
+                    <input type="number" required name="price" value={prop.formData.price} onChange={prop.handleChanges}  /><br />
                     <input type="submit" />
                 </form>
             </article>
