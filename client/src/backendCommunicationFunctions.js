@@ -53,4 +53,9 @@ async function createGameAxios(formData){
     console.log(response)
 }
 
-export {registerAxios,checkAuth,loginAxios,createGameAxios}
+async function getAllGamesAxios(){
+    const response=await axios.get(serverInitialPort+"catalog")
+    return response.data
+}
+
+export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios}

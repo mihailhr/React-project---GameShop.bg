@@ -80,7 +80,18 @@ app.post("/auth",async (req,res)=>{
 app.post("/publishGame",async (req,res)=>{
     console.log(req.body)
 })
-
+app.get("/catalog",async (req,res)=>{
+    try {
+        const allGames=await Game.find()
+        console.log(allGames)
+        if(!allGames){
+            return res.status(404).send("Fail")
+        }
+        res.status(200).send(allGames)
+    } catch (error) {
+        
+    }
+})
 
 app.post("/createNewGame",async (req,res)=>{
     try {
