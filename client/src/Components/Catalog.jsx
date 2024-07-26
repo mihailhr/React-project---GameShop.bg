@@ -29,58 +29,7 @@ export default function Catalog(){
             <section className="items">
                 <ul>
                     {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}{content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}{content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}{content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}{content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}{content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}{content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}{content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
-                    {content}
+                    
                     
                     
                 </ul>

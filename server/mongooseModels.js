@@ -4,7 +4,8 @@ const UserSchema=new mongoose.Schema({
     username:{type:String,required:true,minlength:5},
    
     email:{type:String,required:true,minlength:8},
-    password:{type:String,required:true,minlength:8}
+    password:{type:String,required:true,minlength:8},
+    gamesBought:{type:Array}
 })
 
 const User=new mongoose.model("User",UserSchema)

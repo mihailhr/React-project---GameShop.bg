@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { getGameDetailsAxios } from "../backendCommunicationFunctions"
 import {useParams} from "react-router-dom"
-
+import { useAuth } from "../authContext"
 export default function GameDetails(){
     const [gameDetails,setGameDetails]=useState({name:"",category:"sports",mainImage:"",secondaryImage:"",trailer:"",description:"",price:"",creator:""})
     const {id}=useParams()
-    
+    const {auth}=useAuth()
     useEffect(()=>  {
      async function getDetails(){
         console.log(id)
@@ -16,23 +16,56 @@ export default function GameDetails(){
      }
      getDetails()
     },[id])
+    let content
+    
+    if(!auth){
+        content= <h1>Log in to buy the game</h1>
+    }else{
+        content= <div className="specFunc"><button>Buy</button> <h1>You have already bought this game</h1> <button>Edit</button> <button>Delete</button></div>
+    }
     console.log(gameDetails)
+    const convertToEmbedUrl = (url) => {
+        const videoId = url.split('youtu.be/')[1] || url.split('v=')[1];
+        return `https://www.youtube.com/embed/${videoId}`;
+    };
     return(
         <div className="gameDetails">
-            <h1>Game details: {gameDetails.name}</h1>
-            <section className="gameImages">
+            <section className="title"><h1>Game details: {gameDetails.name}</h1></section>
+            <article><section className="gameImages">
                 <img src={gameDetails.mainImage} alt={gameDetails.name +"Main Image"} />
                 <img src={gameDetails.secondaryImage} alt={gameDetails.name +"Secondary Image"} />
-                <video  controls autoPlay>
-                    <source src={gameDetails.trailer} />
-                 </video>
+                
 
             </section>
-            <h2>Description</h2>
-            <p>{gameDetails.description}</p>
+            <article className="right">
+            <section className="info">
+                <article><h2>Description</h2>
+                <p>{gameDetails.description}</p></article>
+            
             <h2>Category: {gameDetails.category}</h2>
             <h2>Price: {gameDetails.price} leva.</h2>
+            <iframe
+                width="300"
+                height="200"
+                
+                src={convertToEmbedUrl(gameDetails.trailer)}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="YouTube Video"
+            ></iframe>
+            </section>
+           
+            
+            </article>
+            
+            
+            </article>
+            
+            {content}
             </div>
+
+            
         
     )
 }

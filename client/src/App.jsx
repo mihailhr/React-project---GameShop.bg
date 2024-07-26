@@ -29,6 +29,7 @@ export default function App() {
     email: "",
     password: "",
     rePass: "",
+    gamesBougth:[]
   });
   const [registerIsValid, setIsRegisterValid] = useState(false);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
@@ -62,7 +63,7 @@ export default function App() {
   async function handleRegisterChanges(e) {
     const { name, value } = e.target;
 
-    setRegisterForm({
+    await setRegisterForm({
       ...registerForm,
       [name]: value,
     });
@@ -70,7 +71,7 @@ export default function App() {
   async function submitRegister(e) {
     e.preventDefault();
     console.log("submitted");
-    checkRegister(registerForm, setIsRegisterValid);
+    await checkRegister(registerForm, setIsRegisterValid);
     if (registerIsValid) {
       console.log("Valid register");
       const response = await registerAxios(registerForm);
