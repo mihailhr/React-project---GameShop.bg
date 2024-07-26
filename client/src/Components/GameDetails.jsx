@@ -5,7 +5,7 @@ import { useAuth } from "../authContext"
 export default function GameDetails(){
     const [gameDetails,setGameDetails]=useState({name:"",category:"sports",mainImage:"",secondaryImage:"",trailer:"",description:"",price:"",creator:""})
     const {id}=useParams()
-    const {auth}=useAuth()
+    const {auth,user}=useAuth()
     useEffect(()=>  {
      async function getDetails(){
         console.log(id)
@@ -17,16 +17,21 @@ export default function GameDetails(){
      getDetails()
     },[id])
     let content
-    
+    let buyButton=<button>Buy</button>
+    let bought=<h1>You have already bought this game</h1>
+    let editButton=<button>Edit</button>
+    let deleteButton=<button>Delete</button>
     if(!auth){
         content= <h1>Log in to buy the game</h1>
+    }else if(user===gameDetails.creator){
+        content=<>{editButton}{deleteButton}</>
     }else{
-        content= <div className="specFunc"><button>Buy</button> <h1>You have already bought this game</h1> <button>Edit</button> <button>Delete</button></div>
+        content=buyButton
     }
     console.log(gameDetails)
     const convertToEmbedUrl = (url) => {
         const videoId = url.split('youtu.be/')[1] || url.split('v=')[1];
-        return `https://www.youtube.com/embed/${videoId}`;
+        return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
     };
     return(
         <div className="gameDetails">
@@ -62,7 +67,8 @@ export default function GameDetails(){
             
             </article>
             
-            {content}
+            <div className="functionality">{content}</div>
+            
             </div>
 
             

@@ -327,7 +327,7 @@ align-self: center;
   }
   .login .additional{
     width: 20vw;
-    height: 9vh;
+    height: 14vh;
     background-color: #1D597D;
     border-radius: 40px;
     display: flex;
@@ -369,12 +369,20 @@ align-items: center;}
 
 
 .publish{
-  height: 80vh;
+  height: 85vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: orange;
+}
+.publish .submitBtn{
+  padding: 10px;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 10px;
 }
 .publish article{
   height: 70vh;
@@ -394,8 +402,16 @@ align-items: center;}
     box-sizing: border-box;
     padding: 100px;
 }
+.publish input{
+  border-radius: 10px;
+  padding: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
 .publish h1{
   align-self: center;
+  padding-top: 20px;
+  
 }
 .about{
   width: 100vw;
@@ -491,12 +507,19 @@ border-radius: 20px;
 }
 
 .gameItem img{
-  width: 15vw;
+  width: 18vw;
 }
 .catalog .items{
   background-color: orange;
   min-height: 92vh;
   padding-top: 20px;
+}
+.catalog button{
+  padding: 10px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  border-radius: 40px;
 }
 .catalog .items ul{
   display: flex;
@@ -505,6 +528,10 @@ border-radius: 20px;
   gap: 20px;
   padding: 20px;
 }
+.catalog .items ul img{
+  border-radius: 10px;
+}
+.catalog .gameItem{}
 
 .gameDetails{
   height: 150vh;
@@ -556,27 +583,67 @@ border-radius: 20px;
   gap: 30px;
   padding: 40px;
 }
+.gameDetails .title{
+  height: 4vh;
+  font-size: 30px;
+  padding-top: 20px;
+}
 .gameDetails .info{
   background-color: #1D597D;
   width: 60vw;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 40px;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  height: 97vh;
   margin-left: 50px;
   padding: 30px;
   border-radius: 40px;
   text-indent: 15px;
 }
 .gameDetails .info iframe{
-  width: 50vw;
-  height: 50vh;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 10px;
 }
 .gameDetails .info article{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+.functionality button{
+  padding: 10px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+.functionality{
+display: flex;
+justify-content: space-around;
+width: 40vw;
+margin-left: 30vw;}
+.myAccount{
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+  padding-top: 20px;
+  min-height: 69.7vh;
+  width: 100vw;
+  text-align: center;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.login .submitBtn, button{
+  padding: 10px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  border-radius: 10px;
 }

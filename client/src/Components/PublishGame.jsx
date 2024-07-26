@@ -33,7 +33,7 @@ export default function PublishGame(prop){
                     <input type="text" name="description" value={prop.formData.description} onChange={prop.handleChanges} required/><br />
                     <label >Price</label><br />
                     <input type="number" required name="price" value={prop.formData.price} onChange={prop.handleChanges}  /><br />
-                    <input type="submit" />
+                    <input type="submit" className="submitBtn"/>
                 </form>
             </article>
         </div>:

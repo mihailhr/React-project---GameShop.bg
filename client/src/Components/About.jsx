@@ -16,8 +16,8 @@ export default function About(){
                 </section>
                 <section className="logos">
                 <Link to={"https://github.com/mihailhr/React-project---GameShop.bg"}><FaGithub/></Link>
-                <Link><FaFacebook/></Link>
-                <Link><FaLinkedin/></Link>
+                <Link to={"https://www.facebook.com/GameShop32?locale=bg_BG"}><FaFacebook/></Link>
+                <Link to={"https://www.linkedin.com/company/gameshop"}><FaLinkedin/></Link>
                 </section>
             </article>
         </div>
