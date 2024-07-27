@@ -7,7 +7,17 @@ export default function MyAccount(){
    return auth ?
    <div className="myAccount">
             <h1>Welcome, {user}</h1>
-            <h2>Here are all the games you have published</h2>
+            <section className="leftAndRight">
+                <article className="leftInfo"> 
+                    
+                    <h1>Here are all the games that you have published</h1>
+                    <section className="publishedGames"></section>
+                    </article>
+                <article className="rightInfo">
+                    <h1>Keep track of the games that you have bought</h1>
+                    <section className="gamesBought"></section>
+                    </article>
+            </section>
         </div>
     :
     <Navigate to={"/login"}/>

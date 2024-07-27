@@ -70,7 +70,7 @@ app.post("/auth",async (req,res)=>{
         return res.status(404)
     }
     
-    const findingUser=await User.find({username:verifyingCookie})
+    const findingUser=await User.findOne({username:verifyingCookie})
     if(!findingUser){
         return res.status(404).send("No such user")
     }
@@ -106,6 +106,16 @@ app.post("/getDetails", async (req,res)=>{
         return res.status(404).send("Problem")
     }
     
+})
+app.post("/addBuyer",async (req,res)=>{
+    console.log("Point reached")
+    console.log(req.body)
+    console.log(req.body.gameParams)
+    const findingGame=await Game.findOne({_id:req.body.gameParams})
+    findingGame.buyers.push(req.body.user)
+    await findingGame.save()
+    
+    res.send("OK")
 })
 
 app.post("/createNewGame",async (req,res)=>{

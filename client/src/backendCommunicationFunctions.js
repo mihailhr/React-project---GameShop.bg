@@ -64,5 +64,10 @@ async function getGameDetailsAxios(id){
     return response.data
 }
 
+async function addBuyerAxios(gameParams,user){
+    const response =await axios.post(serverInitialPort+"addBuyer",{gameParams,user})
+    console.log(response)
+}
 
-export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios}
+
+export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios,addBuyerAxios}

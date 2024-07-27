@@ -71,7 +71,9 @@ export default function App() {
   async function submitRegister(e) {
     e.preventDefault();
     console.log("submitted");
+    console.log(registerIsValid)
     await checkRegister(registerForm, setIsRegisterValid);
+    console.log(registerIsValid)
     if (registerIsValid) {
       console.log("Valid register");
       const response = await registerAxios(registerForm);

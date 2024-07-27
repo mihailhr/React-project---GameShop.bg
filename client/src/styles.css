@@ -504,6 +504,7 @@ border-radius: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-weight: 600;
+  text-align: center;
 }
 
 .gameItem img{
@@ -530,6 +531,10 @@ border-radius: 20px;
 }
 .catalog .items ul img{
   border-radius: 10px;
+}
+.catalog .items h1{
+  max-height: 6vh;
+  font-size: 20px;
 }
 .catalog .gameItem{}
 
@@ -575,6 +580,13 @@ border-radius: 20px;
   box-sizing: border-box;
   border-radius: 40px;
   align-self: center;
+  
+}
+.gameDetails .mainImage{
+  height: 60vh;
+}
+.gameDetails .secondaryImage{
+  height: 40vh;
 }
 .specFunc{
   display: flex;
@@ -631,16 +643,55 @@ margin-left: 30vw;}
   flex-direction: column;
   background-color: orange;
   padding-top: 20px;
-  min-height: 69.7vh;
+  min-height: 95vh;
   width: 100vw;
   text-align: center;
-  gap: 20px;
+  gap: 40px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   color: white;
 }
 
-.login .submitBtn, button{
+.myAccount .leftAndRight{
+  width: 100vw;
+  
+  height: 80vh;
+  gap: 100px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.myAccount .leftInfo{
+  background-color: #1D597D;
+  width: 45vw;
+  margin-left: 30px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.myAccount .rightInfo{
+  background-color: #1D597D;
+  margin-right: 40px;
+  width: 45vw;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.myAccount .publishedGames, .myAccount .gamesBought{
+  background-color: white;
+  width: 40vw;
+  height: 70vh;
+  border-radius: 10px;
+}
+
+.login .submitBtn, .login button{
   padding: 10px;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
