@@ -4,11 +4,13 @@ import {useParams} from "react-router-dom"
 import { useAuth } from "../authContext"
 import { addBuyerAxios } from "../backendCommunicationFunctions"
 
+import { useNavigate } from "react-router-dom"
 export default function GameDetails(){
     const [gameDetails,setGameDetails]=useState({name:"",category:"sports",mainImage:"",secondaryImage:"",trailer:"",description:"",price:"",creator:"",buyers:[]})
     const {id}=useParams()
     const {auth,user}=useAuth()
     const [alreadyBought,setAlreadyBought]=useState(false)
+    const navigate=useNavigate()
     useEffect(() => {
         async function getDetails() {
             try {
@@ -32,7 +34,7 @@ export default function GameDetails(){
     let content
     let buyButton=<button onClick={()=>buyButtonHandler()}>Buy</button>
     let bought=<h1>You have already bought this game</h1>
-    let editButton=<button>Edit</button>
+    let editButton=<button onClick={()=>navigate("/edit/" +gameDetails._id)}>Edit</button>
     let deleteButton=<button>Delete</button>
     if(!auth){
         content= <h1>Log in to buy the game</h1>

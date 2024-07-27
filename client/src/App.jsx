@@ -5,7 +5,7 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import "./styles.css";
 import Home from "./Components/Home";
-
+import EditGame from "./Components/EditGame";
 import Register from "./Components/Register";
 import { useState } from "react";
 import checkRegister from "./validators/registerValidator";
@@ -140,6 +140,7 @@ export default function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/catalog" element={<Catalog/>}/>
         <Route path="/catalog/:id" element={<GameDetails/>}/>
+        <Route path="/edit/:id" element={<EditGame/>} />
       </Routes>
 
       <Footer />

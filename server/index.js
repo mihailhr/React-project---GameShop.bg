@@ -77,6 +77,16 @@ app.post("/auth",async (req,res)=>{
     res.status(200).send(verifyingCookie)
 
 })
+app.put("/edit",async (req,res)=>{
+    console.log("point")
+    console.log(req.body.gameId)
+    const changingGame=await Game.findByIdAndUpdate(req.body.gameId,req.body.formData)
+    if(!changingGame){
+        console.log("mistake")
+        return res.status(404).send("Mistake")
+    }
+    return res.status(200).send("OK")
+})
 app.post("/publishGame",async (req,res)=>{
     console.log(req.body)
 })
