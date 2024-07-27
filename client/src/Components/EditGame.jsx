@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function EditGame(){
     const navigate=useNavigate()
-    const {auth,user} =useAuth()
+    const {user} =useAuth()
     const {id}=useParams()
     const[gameDetails,setGameDetails]=useState({name:"",category:"sports",mainImage:"",secondaryImage:"",trailer:"",description:"",price:"",creator:"",buyers:[],_id:id})
     const [isCreator,setIsCreator]=useState(false)

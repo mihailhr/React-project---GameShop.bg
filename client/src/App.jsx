@@ -20,6 +20,7 @@ import About from "./Components/About";
 import Catalog from "./Components/Catalog";
 import checkGame from "./validators/gameValidator";
 import GameDetails from "./Components/GameDetails";
+import NotFound from "./Components/NotFound";
 
 export default function App() {
   const navigate = useNavigate();
@@ -141,6 +142,7 @@ export default function App() {
         <Route path="/catalog" element={<Catalog/>}/>
         <Route path="/catalog/:id" element={<GameDetails/>}/>
         <Route path="/edit/:id" element={<EditGame/>} />
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
 
       <Footer />

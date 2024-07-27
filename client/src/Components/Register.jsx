@@ -26,7 +26,7 @@ export default function Register(prop){
             <input type="password" name="password" value={prop.registerFormData.password} onChange={prop.handleChanges}/> <br />
             <label>Confirm password</label> 
             <input type="password" name="rePass" value={prop.registerFormData.rePass} onChange={prop.handleChanges}/> <br />
-            <input type="submit" /> 
+            <input type="submit" className="inputButton" /> 
 
         </form>
 
