@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getGameDetailsAxios } from "../backendCommunicationFunctions"
+import { deleteGameAxios, getGameDetailsAxios } from "../backendCommunicationFunctions"
 import {useParams} from "react-router-dom"
 import { useAuth } from "../authContext"
 import { addBuyerAxios } from "../backendCommunicationFunctions"
@@ -35,7 +35,7 @@ export default function GameDetails(){
     let buyButton=<button onClick={()=>buyButtonHandler()}>Buy</button>
     let bought=<h1>You have already bought this game</h1>
     let editButton=<button onClick={()=>navigate("/edit/" +gameDetails._id)}>Edit</button>
-    let deleteButton=<button>Delete</button>
+    let deleteButton=<button onClick={()=>{deleteButtonHandler()}}>Delete</button>
     if(!auth){
         content= <h1>Log in to buy the game</h1>
     }else if(user===gameDetails.creator){
@@ -54,6 +54,16 @@ export default function GameDetails(){
             ...prevDetails,
             buyers: [...prevDetails.buyers, user]
         }));
+    }
+     async function deleteButtonHandler(){
+        const userConfirmed=window.confirm(`Do you really want to delete ${gameDetails.name}?`)
+        if(userConfirmed){
+            console.log("User said yes")
+            await deleteGameAxios(id)
+            navigate("/catalog")
+        }else{
+            console.log("User said no")
+        }
     }
     const convertToEmbedUrl = (url) => {
         const videoId = url.split('youtu.be/')[1] || url.split('v=')[1];

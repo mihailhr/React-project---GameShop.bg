@@ -26,6 +26,14 @@ async function editAxios(gameId,formData){
         console.log(error)
     }
 }
+async function deleteGameAxios(gameId){
+    try {
+        const response=await axios.delete(serverInitialPort+"delete",{data:{gameId:gameId}})
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
+}
 async function checkAuth(setUserLoggedIn,setUser) {
     try {
         const response = await axios.post(serverInitialPort + "auth", {}, { withCredentials: true });
@@ -79,4 +87,4 @@ async function addBuyerAxios(gameParams,user){
 }
 
 
-export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios,addBuyerAxios,editAxios}
+export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios,addBuyerAxios,editAxios,deleteGameAxios}

@@ -20,11 +20,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post("/register",async (req,res)=>{
-    console.log("point")
+    
     try {
         const newPass=await bcrypt.hash(req.body.password,10)
         req.body.password=newPass
-        console.log(req.body)
+        
         const creatingUser=await User.create(req.body)
         if(!creatingUser){
             console.log("Problem ocurred")
@@ -78,8 +78,7 @@ app.post("/auth",async (req,res)=>{
 
 })
 app.put("/edit",async (req,res)=>{
-    console.log("point")
-    console.log(req.body.gameId)
+    
     const changingGame=await Game.findByIdAndUpdate(req.body.gameId,req.body.formData)
     if(!changingGame){
         console.log("mistake")
@@ -88,12 +87,22 @@ app.put("/edit",async (req,res)=>{
     return res.status(200).send("OK")
 })
 app.post("/publishGame",async (req,res)=>{
-    console.log(req.body)
+    console.log(req.body + "This")
+})
+
+app.delete("/delete",async(req,res)=>{
+
+    console.log(req.body.gameId + "here")
+    const deletingGame=await Game.findByIdAndDelete(req.body.gameId)
+    if(!deletingGame){
+        return res.status(404).send("Couldn't find the game. Delete was unsuccessful")
+    }
+    res.send("Game deleted")
 })
 app.get("/catalog",async (req,res)=>{
     try {
         const allGames=await Game.find()
-        console.log(allGames)
+        
         if(!allGames){
             return res.status(404).send("Fail")
         }
@@ -119,8 +128,7 @@ app.post("/getDetails", async (req,res)=>{
 })
 app.post("/addBuyer",async (req,res)=>{
     console.log("Point reached")
-    console.log(req.body)
-    console.log(req.body.gameParams)
+    
     const findingGame=await Game.findOne({_id:req.body.gameParams})
     findingGame.buyers.push(req.body.user)
     await findingGame.save()
