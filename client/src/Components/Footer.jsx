@@ -5,7 +5,7 @@ export default function Footer(){
     return(
         <footer>
             <p>&copy; GamesShop.bg 2024. All rights reserved.</p>  
-               <div className="git"><Link to={"https://github.com/mihailhr/React-project---GameShop.bg"}><FaGithub/></Link></div> 
+               <div className="git"><Link to={"https://github.com/mihailhr/React-project---GameShop.bg"} target="_blank"><FaGithub/></Link></div> 
         </footer>
     )
 }

@@ -16,7 +16,7 @@ export default function Register(prop){
         <div className="registerDiv">
             
         <form className="register"  onSubmit={prop.handleSubmit}>
-        <h1>Create account</h1>
+        <h1>Create an account</h1>
             <label>Username </label> <input type="text" name="username" value={prop.registerFormData.username} onChange={prop.handleChanges} />   <br />
             
             <label>Email</label> 

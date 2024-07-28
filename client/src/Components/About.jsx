@@ -15,9 +15,9 @@ export default function About(){
 <p>That's where Gameshop comes in. Our platform connects gamers who want to buy, sell, or trade their second-hand games easily and securely. It's a win-win for everyone: sellers can earn some cash, and buyers can get the games they want at a lower price. Plus, it's good for the environment. By recycling games, we reduce waste and promote a circular economy.</p>
                 </section>
                 <section className="logos">
-                <Link to={"https://github.com/mihailhr/React-project---GameShop.bg"}><FaGithub/></Link>
-                <Link to={"https://www.facebook.com/GameShop32?locale=bg_BG"}><FaFacebook/></Link>
-                <Link to={"https://www.linkedin.com/company/gameshop"}><FaLinkedin/></Link>
+                <Link to={"https://github.com/mihailhr/React-project---GameShop.bg"} target="_blank"><FaGithub/></Link>
+                <Link to={"https://www.facebook.com/GameShop32?locale=bg_BG"} target="_blank"><FaFacebook/></Link>
+                <Link to={"https://www.linkedin.com/company/gameshop"} target="_blank"><FaLinkedin/></Link>
                 </section>
             </article>
         </div>

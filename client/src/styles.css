@@ -93,6 +93,9 @@ footer{
     align-items: center;
     
 }
+.home .gamer a{
+  margin-top: 20px;
+}
 .buttons{
   width: 150px;
   height: 150px;
@@ -179,7 +182,7 @@ align-self: center;
     height: 65vh;
     width: 40vw;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
     align-items: center;
     flex-direction: column;
     padding-bottom: 80px;
@@ -189,7 +192,7 @@ align-self: center;
     font-size: 20px;
     background-color: #1D597D;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 40px;
     color: white;
     border-radius: 40px;
     
@@ -197,16 +200,16 @@ align-self: center;
   .registerDiv{
     background-color: orange;
     display: flex;
-    
+    align-items: center;
     width: 100vw;
     height: 69.7vh;
-    padding-top: 20px;
+    padding-top: 0px;
     box-sizing: border-box;
     justify-content: space-evenly;
     
   }
   .registerDiv .register h1{
-    padding-bottom: 20px;
+    padding-bottom: 30px;
   }
  
   .registerDiv .redirect{
@@ -300,8 +303,8 @@ align-self: center;
     justify-content: space-evenly;
   }
   .logout button{
-    height: 5vh;
-    width: 5vw;
+    height: 8vh;
+    width: 8vw;
   }
   .fields a{
     text-decoration-line: none;
@@ -358,6 +361,14 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;}
+.logout button{
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  font-size: 23px;
+  margin-top: 20px;
+  
+}
 .logout article{
   width: 50vw;
   height: 40vh;
@@ -516,6 +527,7 @@ border-radius: 20px;
 
 .gameItem img{
   width: 18vw;
+  height: 46vh;
 }
 .catalog .items{
   background-color: orange;
