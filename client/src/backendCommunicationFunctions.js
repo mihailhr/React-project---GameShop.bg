@@ -85,6 +85,14 @@ async function addBuyerAxios(gameParams,user){
     const response =await axios.post(serverInitialPort+"addBuyer",{gameParams,user})
     console.log(response)
 }
+async function getAllBoughtGames(user){
+    console.log(user)
+    const response=await axios.get(serverInitialPort+ "boughtGames",{params:{user:user}})
+    return response
+}
+async function getPublishedGames(user){
+    const response=await axios.get(serverInitialPort+ "publishedGames",{params:{user:user}})
+    return response
+}
 
-
-export {registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios,addBuyerAxios,editAxios,deleteGameAxios}
+export {getPublishedGames,getAllBoughtGames,registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios,addBuyerAxios,editAxios,deleteGameAxios}

@@ -1,27 +1,91 @@
+import { useEffect, useState } from "react";
+import { useAuth } from "../authContext";
+import { Navigate, useNavigate } from "react-router-dom";
+import { getAllBoughtGames, getPublishedGames } from "../backendCommunicationFunctions";
 
-import { useAuth } from "../authContext"
-import {Navigate} from "react-router-dom"
-export default function MyAccount(){
-    const {user,auth}=useAuth()
-    console.log(user)
-   return auth ?
-   <div className="myAccount">
-            <h1>Welcome, {user}</h1>
-            <section className="leftAndRight">
-                <article className="leftInfo"> 
-                    
-                    <h1>Here are all the games that you have published</h1>
-                    <section className="publishedGames"></section>
-                    </article>
-                <article className="rightInfo">
-                    <h1>Keep track of the games that you have bought</h1>
-                    <section className="gamesBought"></section>
-                    </article>
-            </section>
-        </div>
-    :
-    <Navigate to={"/login"}/>
+export default function MyAccount() {
+  const { user, auth } = useAuth();
+  console.log(user);
+  const [allBoughtGames, setAllBoughtGames] = useState([]); // Initialize with an empty array
+  const [publishedGames, setPublishedGames]=useState([])
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    async function fetchingBoughtGames() {
+      const result = await getAllBoughtGames(user);
+      setAllBoughtGames(result.data);
+    }
+    if (user) {
+      fetchingBoughtGames();
+    }
+  }, [user]);
 
+  useEffect(()=>{
+    async function fetchingPublishedGame(){
+        const result =await getPublishedGames(user)
+        setPublishedGames(result.data)
+    }
+    if(user){
+        fetchingPublishedGame()
+    }
+  },[user])
+  console.log(publishedGames);
 
-    
+  let content;
+  let publishedContent
+  if (allBoughtGames.length > 0) {
+    content = (
+      <ul className="gamesBought">
+        {allBoughtGames.map((game) => (
+          <li key={game.name + game.creator}>
+            <p>{game.name}</p>
+            <button onClick={() => learnMoreButton(game._id)}>Learn more</button>
+          </li>
+        ))}
+      </ul>
+    );
+  } else {
+    content = <h1 className="gamesBought">You have not bought any games yet</h1>;
+  }
+  console.log("Here !!!" + publishedGames)
+  if (publishedGames.length > 0) {
+    publishedContent = (
+      <ul className="gamesPublished">
+        {publishedGames.map((game) => (
+          <li key={game.name + game.creator}>
+            <p>{game.name}</p>
+            <button onClick={() => learnMoreButton(game._id)}>Modify or delete</button>
+          </li>
+        ))}
+      </ul>
+    );
+  } else {
+    publishedContent = <h1 className="gamesPublished">You have not published any games yet</h1>;
+  }
+
+  function learnMoreButton(gameId) {
+    navigate("/catalog/" + gameId);
+  }
+
+  return auth ? (
+    <div className="myAccount">
+      <h1>Welcome, {user}</h1>
+      <section className="leftAndRight">
+        <article className="leftInfo">
+          <h1>Here are all the games that you have published</h1>
+          <section className="publishedGames">
+            {publishedContent}
+          </section>
+        </article>
+        <article className="rightInfo">
+          <h1>Keep track of the games that you have bought</h1>
+          <section className="gamesBought">
+            {content}
+          </section>
+        </article>
+      </section>
+    </div>
+  ) : (
+    <Navigate to={"/login"} />
+  );
 }

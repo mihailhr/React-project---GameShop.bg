@@ -527,7 +527,7 @@ border-radius: 20px;
 
 .gameItem img{
   width: 18vw;
-  height: 46vh;
+  height: 36vh;
 }
 .catalog .items{
   background-color: orange;
@@ -614,10 +614,15 @@ border-radius: 20px;
   gap: 30px;
   padding: 40px;
 }
+ .myAccount .gamesBought, .myAccount .publishedGames{color: black;}
 .gameDetails .title{
-  height: 4vh;
+  height: 10vh;
+  width: 100vw;
+  text-align: center;
+  align-self: center;
   font-size: 30px;
   padding-top: 20px;
+  background-color: #1D597D;
 }
 .gameDetails .info{
   background-color: #1D597D;

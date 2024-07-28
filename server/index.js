@@ -111,6 +111,26 @@ app.get("/catalog",async (req,res)=>{
         
     }
 })
+app.get("/boughtGames",async (req,res)=>{
+    try {
+        
+        const boughtGames=await Game.find({buyers:req.query.user})
+        
+        res.status(200).send(boughtGames)
+    } catch (error) {
+        res.status(404).send("Bad")
+    }
+})
+app.get("/publishedGames",async (req,res)=>{
+    try {
+        console.log(req.query.user)
+        const publishedGames=await Game.find({creator:req.query.user})
+        console.log(publishedGames)
+        res.status(200).send(publishedGames)
+    } catch (error) {
+        res.status(404).send("Bad")
+    }
+})
 app.post("/getDetails", async (req,res)=>{
     console.log(req.body)
     try {

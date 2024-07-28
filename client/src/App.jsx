@@ -7,7 +7,7 @@ import "./styles.css";
 import Home from "./Components/Home";
 import EditGame from "./Components/EditGame";
 import Register from "./Components/Register";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import checkRegister from "./validators/registerValidator";
 import Logout from "./Components/Logout";
 import { createGameAxios, loginAxios, registerAxios } from "./backendCommunicationFunctions";
@@ -35,7 +35,7 @@ export default function App() {
   const [registerIsValid, setIsRegisterValid] = useState(false);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [loginForm, setLoginForm] = useState({ username: "", password: "" });
-
+  let additionalInfoRegister
   function handleLoginChanges(e) {
     const { name, value } = e.target;
     setLoginForm({
@@ -43,7 +43,27 @@ export default function App() {
         [name]:value
     })
   }
+  useEffect(() => {
+    if (registerIsValid) {
+      (
+        async () => {
+        console.log("Valid register");
+        const response = await registerAxios(registerForm);
 
+        if (response === 200) {
+          setAuth(true);
+          setRegisterForm({
+            username: "",
+            email: "",
+            password: "",
+            rePass: "",
+          });
+          navigate("/");
+        }
+      })();
+    }
+  }, [registerIsValid]);
+  
   async function handleLoginSubmit(e){
       e.preventDefault()
       console.log(loginForm)
@@ -73,7 +93,8 @@ export default function App() {
     e.preventDefault();
     console.log("submitted");
     console.log(registerIsValid)
-    await checkRegister(registerForm, setIsRegisterValid);
+     additionalInfoRegister=await checkRegister(registerForm, setIsRegisterValid);
+    
     console.log(registerIsValid)
     if (registerIsValid) {
       console.log("Valid register");
@@ -91,6 +112,8 @@ export default function App() {
         });
       }
       navigate("/");
+    }else{
+     window.alert(additionalInfoRegister)
     }
   }
    
