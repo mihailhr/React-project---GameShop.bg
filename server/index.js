@@ -43,6 +43,7 @@ app.post("/register",async (req,res)=>{
     }
 })
 app.post("/login",async (req,res)=>{
+    console.log(req.body)
     const findingUser=await User.findOne({username:req.body.username})
     if(!findingUser){
         return res.status(404).send("No such user")
@@ -52,14 +53,14 @@ app.post("/login",async (req,res)=>{
         return res.status(404).send("Wrong username or password")
     }
     const token=jwt.sign(req.body.username,secret)
-        const creatingCookie=await res.cookie("token",token)
+        const creatingCookie= res.cookie("token",token)
         if(!creatingCookie){
-            res.status(400).send("Couldnt create cookie")
+            return res.status(404).send("Couldnt create cookie")
             
         }
-        res.status(200).send("Alright, user logged in, token attached")
+         return res.status(200).send("Alright, user logged in, token attached")
 })
-
+  
 app.post("/auth",async (req,res)=>{
     const token=req.cookies.token
     if(!token){

@@ -64,21 +64,30 @@ export default function App() {
     }
   }, [registerIsValid]);
   
-  async function handleLoginSubmit(e){
-      e.preventDefault()
-      console.log(loginForm)
-      const serverRes=await loginAxios(loginForm)
+  async function handleLoginSubmit(e) {
+    e.preventDefault();
+  
+    try {
+      const serverRes = await loginAxios(loginForm); // Assume serverRes is directly the status code
+  
       if (serverRes === 200) {
-        
+        console.log(serverRes + " good");
         setAuth(true);
-        
+  
         setLoginForm({
           username: "",
           password: "",
-          
         });
+        navigate("/");
+      } else {
+        console.log(serverRes + " bad");
+        window.alert("Incorrect username or password");
       }
-      navigate("/");
+    } catch (error) {
+      // Handle any unexpected errors
+      console.error("An unexpected error occurred:", error);
+      window.alert("Incorrect username or password");
+    }
   }
 
   async function handleRegisterChanges(e) {

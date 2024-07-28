@@ -54,6 +54,7 @@ async function checkAuth(setUserLoggedIn,setUser) {
     }
 }
 async function loginAxios(formData){
+    console.log(formData)
     const response=await axios.post(serverInitialPort+"login",formData,{withCredentials:true})
     console.log(response)
     if(response.status==200){

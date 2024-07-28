@@ -23,18 +23,18 @@ async function checkRegister(registerFormData,setRegisterValid){
     if(registerFormData.username.length<5){
       setRegisterValid(false)
       console.log("6")
-      return "Invalid username"
+      return "Username should be at least 5 characters long."
     }
     
     if(registerFormData.email.length<8){
       setRegisterValid(false)
       console.log("8")
-      return "Invalid email"
+      return "Email should be at least 8 characters long."
     }
     if(registerFormData.password.length<8){
       setRegisterValid(false)
       console.log("9")
-      return "Invalid password"
+      return "Password should be at least 8 characters long."
     }
     setRegisterValid(true)
     return "Successful registration. Welcome!"
