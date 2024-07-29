@@ -19,29 +19,34 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post("/register",async (req,res)=>{
-    
+app.post("/register", async (req, res) => {
     try {
-        const newPass=await bcrypt.hash(req.body.password,10)
-        req.body.password=newPass
-        
-        const creatingUser=await User.create(req.body)
-        if(!creatingUser){
-            console.log("Problem ocurred")
-            res.status(400).send("Problem")
-            
-        }
-        const token=jwt.sign(req.body.username,secret)
-        const creatingCookie=await res.cookie("token",token)
-        if(!creatingCookie){
-            res.status(400).send("Couldnt create cookie")
-            
-        }
-        res.status(200).send("Alright, user created, token attached")
+      const usernameTaken = await User.findOne({ username: req.body.username });
+      if (usernameTaken) {
+        return res.status(409).send("Username taken");
+      }
+  
+      const newPass = await bcrypt.hash(req.body.password, 10);
+      req.body.password = newPass;
+  
+      const creatingUser = await User.create(req.body);
+      if (!creatingUser) {
+        console.log("Problem occurred");
+        return res.status(400).send("Problem");
+      }
+  
+      const token = jwt.sign(req.body.username, secret);
+      const creatingCookie = res.cookie("token", token);
+      if (!creatingCookie) {
+        return res.status(400).send("Couldn't create cookie");
+      }
+  
+      return res.status(200).send("Alright, user created, token attached");
     } catch (error) {
-        res.status(400).send(error)
+      return res.status(500).send("Server error");
     }
-})
+  });
+  
 app.post("/login",async (req,res)=>{
     console.log(req.body)
     const findingUser=await User.findOne({username:req.body.username})

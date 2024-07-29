@@ -101,30 +101,41 @@ export default function App() {
   async function submitRegister(e) {
     e.preventDefault();
     console.log("submitted");
-    console.log(registerIsValid)
-     additionalInfoRegister=await checkRegister(registerForm, setIsRegisterValid);
+  
+   
+    additionalInfoRegister = await checkRegister(registerForm, setIsRegisterValid);
     
-    console.log(registerIsValid)
+    console.log(registerIsValid);
     if (registerIsValid) {
-      console.log("Valid register");
-      const response = await registerAxios(registerForm);
-
-      if (response === 200) {
+      try {
+        console.log("Valid register");
+        const responseStatus = await registerAxios(registerForm);
+        console.log("Status === " + responseStatus);
         
-        setAuth(true);
-        setRegisterForm({
-          username: "",
-          
-          email: "",
-          password: "",
-          rePass: "",
-        });
+        if (responseStatus === 409) {
+          additionalInfoRegister = "Username taken";
+          return window.alert(additionalInfoRegister);
+        } else if (responseStatus === 200) {
+          setAuth(true);
+          setRegisterForm({
+            username: "",
+            email: "",
+            password: "",
+            rePass: "",
+          });
+          navigate("/");
+        } else {
+          window.alert("An unexpected error occurred. Please try again later.");
+        }
+      } catch (error) {
+        console.error("Unexpected error: ", error);
+        window.alert("An unexpected error occurred. Please try again later.");
       }
-      navigate("/");
-    }else{
-     window.alert(additionalInfoRegister)
+    } else {
+      window.alert(additionalInfoRegister);
     }
   }
+  
    
 
   const [gameForm,setGameForm]=useState({name:"",category:"sports",mainImage:"",secondaryImage:"",trailer:"",description:"",price:""})

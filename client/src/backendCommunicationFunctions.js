@@ -5,18 +5,23 @@ import axios from "axios"
 
 const serverInitialPort="http://localhost:3000/"
 
-async function registerAxios(formData){
-    const response=await axios.post(serverInitialPort+"register",formData,{withCredentials:true})
-    console.log(response)
-    if(response.status==200){
-        console.log("All clear")
-        
-        return response.status
-    }else{
-        console.log("problem here")
-        return response.status
+async function registerAxios(formData) {
+    try {
+      const response = await axios.post(serverInitialPort + "register", formData, { withCredentials: true });
+      console.log(response);
+      return response.status;
+    } catch (error) {
+      if (error.response) {
+        console.log("Error status: ", error.response.status);
+        return error.response.status;
+      } else {
+        console.log("Unexpected error: ", error);
+        throw error; 
+      }
     }
-}
+  }
+  
+  
 async function editAxios(gameId,formData){
     console.log(gameId)
     try {
