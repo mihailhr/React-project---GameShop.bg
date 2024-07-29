@@ -44,8 +44,9 @@ export default function Catalog(){
    }else{
     return(
         <div className="catalog">
-        <section className="title">
+        <section className="titleSp">
         <h1>No games have been published yet.</h1>
+        <img src="https://w0.peakpx.com/wallpaper/677/966/HD-wallpaper-sad-face-background-black-screen-styles.jpg" alt="" />
         </section>
         </div>
     )

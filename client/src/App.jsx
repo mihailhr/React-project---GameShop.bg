@@ -21,6 +21,7 @@ import Catalog from "./Components/Catalog";
 import checkGame from "./validators/gameValidator";
 import GameDetails from "./Components/GameDetails";
 import NotFound from "./Components/NotFound";
+import BestSellers from "./Components/BestSellers";
 
 export default function App() {
   const navigate = useNavigate();
@@ -131,9 +132,7 @@ export default function App() {
         console.error("Unexpected error: ", error);
         window.alert("An unexpected error occurred. Please try again later.");
       }
-    } else {
-      window.alert(additionalInfoRegister);
-    }
+    } 
   }
   
    
@@ -177,6 +176,7 @@ export default function App() {
             />
           }
         />
+        <Route path="/bestSellers" element={<BestSellers/>}/>
         <Route path="/logout" element={<Logout />} />
         <Route path="/login" element={<Login  loginForm={loginForm} handleChanges={handleLoginChanges} handleSubmit={handleLoginSubmit} />} />
         <Route path="/createNewGame" element={<PublishGame handleChanges={handleGameChanges} formData={gameForm} handleSubmit={handleGameSubmit}/>}/>
