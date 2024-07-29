@@ -180,7 +180,7 @@ export default function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/login" element={<Login  loginForm={loginForm} handleChanges={handleLoginChanges} handleSubmit={handleLoginSubmit} />} />
         <Route path="/createNewGame" element={<PublishGame handleChanges={handleGameChanges} formData={gameForm} handleSubmit={handleGameSubmit}/>}/>
-        <Route path="/myAccount" element={<MyAccount/>}/>
+        <Route path="/myAccount/:id" element={<MyAccount/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/catalog" element={<Catalog/>}/>
         <Route path="/catalog/:id" element={<GameDetails/>}/>

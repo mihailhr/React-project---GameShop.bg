@@ -5,7 +5,7 @@ import { useAuth } from "../authContext";
 
 
 export default function Navbar(){
-    const { auth} = useAuth();
+    const { auth,user} = useAuth();
     
     
     return(
@@ -20,7 +20,7 @@ export default function Navbar(){
             <ul className="registerNav">
             
             {auth ? <><li><NavLink to={"/logout"}> Log out</NavLink></li>
-            <li><NavLink to={"/myAccount"}>My account</NavLink></li></> :  <><li><NavLink to={"/login"}>Log in</NavLink></li>
+            <li><NavLink to={"/myAccount/"+user}>My account</NavLink></li></> :  <><li><NavLink to={"/login"}>Log in</NavLink></li>
             <li><NavLink to={"/register"}>Register</NavLink></li></>}
             
             </ul>
