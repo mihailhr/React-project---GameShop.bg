@@ -17,15 +17,15 @@ export default function Register(prop){
             
         <form className="register"  onSubmit={prop.handleSubmit}>
         <h1>Create an account</h1>
-            <label>Username </label> <input type="text" name="username" value={prop.registerFormData.username} onChange={prop.handleChanges} />   <br />
+            <label>Username </label> <input type="text" name="username" value={prop.registerFormData.username} onChange={prop.handleChanges} minLength={5} required />   <br />
             
             <label>Email</label> 
-            <input type="email" name="email" value={prop.registerFormData.email} onChange={prop.handleChanges} /> <br />
+            <input type="email" name="email" value={prop.registerFormData.email} onChange={prop.handleChanges} minLength={8} required /> <br />
             
             <label>Password</label> 
-            <input type="password" name="password" value={prop.registerFormData.password} onChange={prop.handleChanges}/> <br />
+            <input type="password" name="password" value={prop.registerFormData.password} onChange={prop.handleChanges} minLength={8} required/> <br />
             <label>Confirm password</label> 
-            <input type="password" name="rePass" value={prop.registerFormData.rePass} onChange={prop.handleChanges}/> <br />
+            <input type="password" name="rePass" value={prop.registerFormData.rePass} onChange={prop.handleChanges} minLength={8} required/> <br />
             <input type="submit" className="inputButton" /> 
 
         </form>
