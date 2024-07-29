@@ -1,5 +1,7 @@
 *{padding: 0;
 margin: 0;
+font-weight: 600;
+font-family: Arial, Helvetica, sans-serif;
 }
  body{width: 100vw;
 overflow-x: hidden;}
@@ -24,9 +26,7 @@ overflow-x: hidden;}
     margin: 0px 30px;
     text-decoration-line: none;
     font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif;
     color: #1D597D;
-    font-weight: 600;
 }
 .registerNav{
     display: flex;
@@ -37,9 +37,7 @@ overflow-x: hidden;}
 
 
 .navbar a.active{
-    /* border-bottom: 4px solid green;
-    padding-bottom: 5px;
-    color: red; */
+   
 
     background-color: orange;
     color: white;
@@ -60,7 +58,7 @@ footer{
     color: white;
     font-size: 20px;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    
 }
 .git{
     position: absolute;
@@ -143,7 +141,7 @@ align-self: center;
     justify-content: center;
     padding: 40px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    
     color: #1D597D;
     flex-direction: column;
     gap: 50px;
@@ -187,8 +185,6 @@ align-self: center;
     flex-direction: column;
     padding-bottom: 80px;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
     font-size: 20px;
     background-color: #1D597D;
     text-align: center;
@@ -227,16 +223,13 @@ align-self: center;
     height: 40vh;
     padding: 40px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
+    
     font-size: 20px;
     border-radius: 40px;
   }
   .registerDiv button, .registerDiv .inputButton{
     padding: 10px;
     font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
     border-radius: 10px;
   }
   .registerDiv .redirect p{
@@ -335,8 +328,6 @@ align-self: center;
     justify-content: center;
     align-items: center;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
     font-size: 20px;
     border-radius: 40px;
   }
@@ -354,8 +345,6 @@ align-self: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
     color: white;
   }
   .login .additional button{
@@ -372,8 +361,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;}
 .logout button{
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
   font-size: 23px;
   margin-top: 20px;
@@ -389,10 +376,8 @@ align-items: center;}
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    gap: 20px;
+  font-size: 20px;
+  gap: 20px;
 }
 
 
@@ -408,8 +393,6 @@ align-items: center;}
 .publish .submitBtn{
   padding: 10px;
   margin-top: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
   font-size: 20px;
   border-radius: 10px;
 }
@@ -419,8 +402,6 @@ align-items: center;}
   width: 40vw;
   background-color: #1D597D;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -445,8 +426,6 @@ align-items: center;}
   gap: 10px;
   align-items: center;
   padding: 20px;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
 }
 .publishInfo h1{
   font-size: 40px;
@@ -516,8 +495,6 @@ input:invalid{
   text-align: left;
   
   gap: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
   background-color: #1D597D;
   margin: 30px 0px;
   border-radius: 40px;
@@ -550,8 +527,6 @@ border-radius: 20px;
   background-color: #1D597D;
   color: white;
   height: 8vh;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -568,9 +543,7 @@ border-radius: 20px;
   gap: 10px;
   padding: 10px;
   border-radius: 40px;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
-  font-weight: 600;
   text-align: center;
 }
 
@@ -585,8 +558,6 @@ border-radius: 20px;
 }
 .catalog button{
   padding: 10px;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   border-radius: 40px;
 }
@@ -610,9 +581,7 @@ border-radius: 20px;
   height: 150vh;
   width: 100vw;
   background-color: orange;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
-  font-weight: 600;
   display: flex;
 
   flex-direction: column;
@@ -701,8 +670,6 @@ border-radius: 20px;
 .functionality button{
   padding: 10px;
   border-radius: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
   text-transform: uppercase;
   font-size: 30px;
 }
@@ -721,8 +688,6 @@ margin-left: 30vw;}
   text-align: center;
   justify-content: start;
   gap: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
   color: white;
 }
 
@@ -739,11 +704,9 @@ margin-left: 30vw;}
   overflow-y: scroll;
 }
 .gamesBoughtUl button, .gamesPublishedUl button{
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   margin-top: 10px;
   padding: 2px;
-  font-weight: 600;
   border-radius: 10px;
 }
 .leftInfo h1, .rightInfo h1{
@@ -768,7 +731,7 @@ margin-left: 30vw;}
   display: flex;
   justify-content: space-between;
   text-align: center;
- font-family: Arial, Helvetica, sans-serif;
+
 }
 .myAccount button{
   padding: 3px;
@@ -807,8 +770,6 @@ margin-left: 30vw;}
 .login .submitBtn, .login button{
   padding: 10px;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
   border-radius: 10px;
 }
 
@@ -820,8 +781,6 @@ margin-left: 30vw;}
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
-  font-weight: 600;
   font-size: 25px;
 }
