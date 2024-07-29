@@ -666,16 +666,51 @@ margin-left: 30vw;}
   display: flex;
   flex-direction: column;
   background-color: orange;
-  padding-top: 20px;
-  min-height: 95vh;
+  
+  min-height: 99vh;
   width: 100vw;
   text-align: center;
+  justify-content: start;
   gap: 40px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   color: white;
 }
 
+.gamesBoughtUl, .gamesPublishedUl{
+  list-style-type: none;
+  width:40vw ;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+.gamesBoughtUl button, .gamesPublishedUl button{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 2px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.leftInfo h1, .rightInfo h1{
+  font-size: 26px
+}
+.accountWelcome{
+  font-size: 45px;
+  background-color: #1D597D;
+  height: 8vh;
+}
+.gamesBoughtUl li, .gamesPublishedUl li{
+  border: 2px solid white;
+  padding: 10px;
+  background-color: #1D597D;
+  border-radius: 10px;
+}
 .myAccount .leftAndRight{
   width: 100vw;
   
@@ -709,7 +744,8 @@ margin-left: 30vw;}
   gap: 10px;
 }
 .myAccount .publishedGames, .myAccount .gamesBought{
-  background-color: white;
+  background-color: orange;
+  color: white;
   width: 40vw;
   height: 70vh;
   border-radius: 10px;

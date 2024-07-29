@@ -35,25 +35,25 @@ export default function MyAccount() {
   let publishedContent
   if (allBoughtGames.length > 0) {
     content = (
-      <ul className="gamesBought">
+      <ul className="gamesBoughtUl">
         {allBoughtGames.map((game) => (
           <li key={game.name + game.creator}>
-            <p>{game.name}</p>
+            <p>{game.name}, bought for {game.price} leva.</p>
             <button onClick={() => learnMoreButton(game._id)}>Learn more</button>
           </li>
         ))}
       </ul>
     );
   } else {
-    content = <h1 className="gamesBought">You have not bought any games yet</h1>;
+    content = <h1 className="gamesBoughtUl">You have not bought any games yet</h1>;
   }
   console.log("Here !!!" + publishedGames)
   if (publishedGames.length > 0) {
     publishedContent = (
-      <ul className="gamesPublished">
+      <ul className="gamesPublishedUl">
         {publishedGames.map((game) => (
           <li key={game.name + game.creator}>
-            <p>{game.name}</p>
+            <p>{game.name}, selling for {game.price} leva.</p>
             <button onClick={() => learnMoreButton(game._id)}>Modify or delete</button>
           </li>
         ))}
@@ -69,7 +69,7 @@ export default function MyAccount() {
 
   return auth ? (
     <div className="myAccount">
-      <h1>Welcome, {user}</h1>
+      <h1 className="accountWelcome">Welcome, {user}</h1>
       <section className="leftAndRight">
         <article className="leftInfo">
           <h1>Here are all the games that you have published</h1>
