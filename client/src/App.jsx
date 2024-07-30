@@ -10,7 +10,7 @@ import Register from "./Components/Register";
 import { useState,useEffect } from "react";
 import checkRegister from "./validators/registerValidator";
 import Logout from "./Components/Logout";
-import { createGameAxios, loginAxios, registerAxios } from "./backendCommunicationFunctions";
+import { createGameAxios, initialSetupAxios, loginAxios, registerAxios } from "./backendCommunicationFunctions";
 
 import { useAuth } from "./authContext";
 import Login from "./Components/Login";
@@ -25,6 +25,11 @@ import BestSellers from "./Components/BestSellers";
 
 export default function App() {
   const navigate = useNavigate();
+  async function initialSetup(){
+    const response=await initialSetupAxios()
+    console.log(response)
+  }
+  initialSetup()
   const { auth, setAuth,user } = useAuth();
   const [registerForm, setRegisterForm] = useState({
     username: "",
@@ -44,6 +49,7 @@ export default function App() {
         [name]:value
     })
   }
+
   useEffect(() => {
     if (registerIsValid) {
       (

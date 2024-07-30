@@ -80,6 +80,10 @@ async function getAllGamesAxios(){
     const response=await axios.get(serverInitialPort+"catalog")
     return response.data
 }
+async function initialSetupAxios(){
+    const response=await axios.post(serverInitialPort+"setup")
+    return(response.data)
+}
 
 async function getGameDetailsAxios(id){
     console.log(id)
@@ -101,4 +105,4 @@ async function getPublishedGames(user){
     return response
 }
 
-export {getPublishedGames,getAllBoughtGames,registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios,addBuyerAxios,editAxios,deleteGameAxios}
+export {getPublishedGames,initialSetupAxios,getAllBoughtGames,registerAxios,checkAuth,loginAxios,createGameAxios,getAllGamesAxios,getGameDetailsAxios,addBuyerAxios,editAxios,deleteGameAxios}
