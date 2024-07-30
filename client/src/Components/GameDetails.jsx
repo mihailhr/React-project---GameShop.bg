@@ -83,7 +83,7 @@ export default function GameDetails(){
                 <article><h2>Description</h2>
                 <p>{gameDetails.description}</p></article>
             
-            <h2>Category: {gameDetails.category}</h2>
+            <h2>Category: {gameDetails.category.charAt(0).toUpperCase()+ gameDetails.category.slice(1)}</h2>
             <h2>Price: {gameDetails.price} leva.</h2>
             <iframe
                 width="300"

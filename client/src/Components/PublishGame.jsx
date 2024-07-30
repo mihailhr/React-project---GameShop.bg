@@ -31,7 +31,7 @@ export default function PublishGame(prop){
                     <label >Trailer</label><br />
                     <input type="text" name="trailer" value={prop.formData.trailer} onChange={prop.handleChanges} minLength={10} required/><br />
                     <label>Description</label><br />
-                    <input type="text" name="description" value={prop.formData.description} onChange={prop.handleChanges}  minLength={20} required/><br />
+                    <input type="text" name="description" value={prop.formData.description} onChange={prop.handleChanges}  minLength={20} maxLength={700}required/><br />
                     <label >Price</label><br />
                     <input type="number" required name="price" value={prop.formData.price}  min={0} onChange={prop.handleChanges}  /><br />
                     <input type="submit" className="submitBtn"/>
@@ -46,7 +46,7 @@ export default function PublishGame(prop){
                     <li>Select an appropriate category for the game.</li>
                     <li>The minimal length of all links is 10 characters. The link to the trailer must come from YouTube.</li>
                     <li>Upload only HD images so that your game offer looks better.</li>
-                    <li>The description must be at least 20 characters long.</li>
+                    <li>The description must be between 20 and 700 characters long .</li>
                     <li>The game can be free, but {"it's"} price can never be below 0.</li>
                 </ul>
                 

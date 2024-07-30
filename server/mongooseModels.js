@@ -16,7 +16,7 @@ const GameSchema=new mongoose.Schema({
     mainImage:{type:String,required:true,minlength:10},
     secondaryImage:{type:String,required:true,minlength:10},
     trailer:{type:String,required:true,minlength:10},
-    description:{type:String,required:true,minlength:20},
+    description:{type:String,required:true,minlength:20, maxlength:700},
     price:{type:Number,required:true,min:0},
     creator:{type:String},
     buyers:{type:Array}
