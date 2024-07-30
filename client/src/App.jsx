@@ -25,11 +25,15 @@ import BestSellers from "./Components/BestSellers";
 
 export default function App() {
   const navigate = useNavigate();
-  async function initialSetup(){
-    const response=await initialSetupAxios()
-    console.log(response)
-  }
-  initialSetup()
+  
+  
+  useEffect(()=>{
+    async function initialSetup(){
+      const response=await initialSetupAxios()
+      console.log(response)
+    }
+    initialSetup()
+  },[])
   const { auth, setAuth,user } = useAuth();
   const [registerForm, setRegisterForm] = useState({
     username: "",
