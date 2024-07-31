@@ -18,10 +18,12 @@ export default function PublishGame(prop){
                     <label>Category</label> <br />
                     <select name="category" value={prop.formData.category} onChange={prop.handleChanges}  required> 
                         <option value="sports" >Sports</option>
+                        <option value="racing" >Racing</option>
+                        <option value="fighting" >Fighting</option>
                         <option value="action">Action</option>
                         <option value="horror">Horror</option>
                         <option value="adventure">Adventure</option>
-                        <option value="kids">Family friendly</option>
+                        <option value="family friendly">Family friendly</option>
                         <option value="other">Other</option>
                     </select> <br />
                     <label >Main image</label> <br />

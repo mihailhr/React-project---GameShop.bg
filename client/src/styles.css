@@ -1,3 +1,6 @@
+/* Global */
+
+
 *{padding: 0;
 margin: 0;
 font-weight: 600;
@@ -5,8 +8,10 @@ font-family: Arial, Helvetica, sans-serif;
 }
  body{width: 100vw;
 overflow-x: hidden;}
+/* Global */
 
 
+/* Navbar */
 .navbar img{
     width: 15vw;
     padding-left: 30px;
@@ -46,10 +51,9 @@ overflow-x: hidden;}
     padding: 20px;
     border-radius: 10px;
 }
-.content{
-    width: 100vw;
-    height: 120vh;
-}
+/* Navbar */
+
+/* Footer */
 footer{
     display: flex;
     
@@ -72,7 +76,7 @@ footer{
 .git a{
     color: white;
 }
-
+/* Footer */
 
 .home{
     width: 100vw;

@@ -12,7 +12,7 @@ const User=new mongoose.model("User",UserSchema)
 
 const GameSchema=new mongoose.Schema({
     name:{type:String,required:true,minlength:2},
-    category:{type:String,required:true,enum: ["sports","action","adventure","kids","other","horror"]},
+    category:{type:String,required:true,enum: ["sports","action","adventure","family friendly","other","horror","racing","fighting"]},
     mainImage:{type:String,required:true,minlength:10},
     secondaryImage:{type:String,required:true,minlength:10},
     trailer:{type:String,required:true,minlength:10},

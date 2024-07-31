@@ -23,6 +23,7 @@ export default function BestSellers() {
         <div className="bestSellers">
             <article className="title">Here are the current best sellers</article>
             {allGames.length > 2 ? (
+                
                 <>
                     <article className="firstPlace">
                         <img src="/Pastel Blue White Cute Illustration Well Done School Teacher Round Sticker-modified.png" alt="" />

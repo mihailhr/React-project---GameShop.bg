@@ -73,7 +73,9 @@ export default function EditGame(){
                     <input type="text" name="name" value={gameDetails.name} onChange={handleEditChanges} required /> <br />
                     <label>Category</label> <br />
                     <select name="category"  value={gameDetails.category} onChange={handleEditChanges} required> 
-                        <option value="sports" >Sports</option>
+                    <option value="sports" >Sports</option>
+                        <option value="racing" >Racing</option>
+                        <option value="fighting" >Fighting</option>
                         <option value="action">Action</option>
                         <option value="horror">Horror</option>
                         <option value="adventure">Adventure</option>
