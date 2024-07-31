@@ -8,7 +8,7 @@ const serverInitialPort="http://localhost:3000/"
 async function registerAxios(formData) {
     try {
       const response = await axios.post(serverInitialPort + "register", formData, { withCredentials: true });
-      console.log(response);
+      
       return response.status;
     } catch (error) {
       if (error.response) {
@@ -23,7 +23,7 @@ async function registerAxios(formData) {
   
   
 async function editAxios(gameId,formData){
-    console.log(gameId)
+    
     try {
         const response=await axios.put(serverInitialPort+"edit",{gameId,formData})
         console.log(response)
@@ -45,7 +45,6 @@ async function checkAuth(setUserLoggedIn,setUser) {
         if (response.status === 200) {
             setUserLoggedIn(true);
             console.log("Logged in");
-            console.log(response.data)
             setUser(response.data)
             
 
@@ -59,9 +58,8 @@ async function checkAuth(setUserLoggedIn,setUser) {
     }
 }
 async function loginAxios(formData){
-    console.log(formData)
+    
     const response=await axios.post(serverInitialPort+"login",formData,{withCredentials:true})
-    console.log(response)
     if(response.status==200){
         console.log("All clear")
         
@@ -82,7 +80,7 @@ async function getAllGamesAxios(){
 }
 async function initialSetupAxios(){
     const response=await axios.post(serverInitialPort+"setup")
-    return(response.data)
+    return response.data
 }
 
 async function getGameDetailsAxios(id){
@@ -96,7 +94,7 @@ async function addBuyerAxios(gameParams,user){
     console.log(response)
 }
 async function getAllBoughtGames(user){
-    console.log(user)
+    
     const response=await axios.get(serverInitialPort+ "boughtGames",{params:{user:user}})
     return response
 }

@@ -22,7 +22,7 @@ export default function Catalog(){
    <h1>{game.name}</h1>
    Price: {game.price} lv.
    <button onClick={()=>{clickHandler(game._id)}}>More info</button></li>)
-   console.log(allGames)
+   
    if(allGames.length>0){
     return(
         

@@ -15,9 +15,16 @@ username:"GameShopCreator",password:gameshopPass
 username:"Gamer123",password:password2 --- No games uploaded
 
 In later commits the unnecessary  node modules will be deleted.
-To run the app
+To run the app:
+
+0. You need MongoDb
+
 1. Open the server folder in an integrated terminal 
-    1.1 node index
+    1.1 npm i or npm install to install the necessary dependencies
+    1.2 node index
+
 2. Open the client in an integrated terminal
+    2.1 npm i or npm install to install the necessary dependencies
     2.1 npm run dev
-3. Access hte local host in your browser - most likely http://localhost:5173/
+
+3. Access the local host in your browser - most likely http://localhost:5173/

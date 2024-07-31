@@ -14,8 +14,7 @@ export default function GameDetails(){
     useEffect(() => {
         async function getDetails() {
             try {
-                console.log(id);
-                console.log(alreadyBought)
+               
                 const details = await getGameDetailsAxios(id);
                 if (details) {
                     setGameDetails(details);
@@ -46,7 +45,7 @@ export default function GameDetails(){
     }else{
         content=buyButton
     }   
-    console.log(gameDetails)
+    
     async function buyButtonHandler(){
         const axiosOperation=await addBuyerAxios(id,user)
         console.log(axiosOperation)

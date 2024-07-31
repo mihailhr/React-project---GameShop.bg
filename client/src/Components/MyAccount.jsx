@@ -5,7 +5,7 @@ import { getAllBoughtGames, getPublishedGames } from "../backendCommunicationFun
 
 export default function MyAccount() {
   const { user, auth } = useAuth();
-  console.log(user);
+ 
   const [allBoughtGames, setAllBoughtGames] = useState([]); // Initialize with an empty array
   const [publishedGames, setPublishedGames]=useState([])
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export default function MyAccount() {
         fetchingPublishedGame()
     }
   },[user])
-  console.log(publishedGames);
+  
 
   let content;
   let publishedContent
@@ -47,7 +47,7 @@ export default function MyAccount() {
   } else {
     content = <h1 className="gamesBoughtUl">You have not bought any games yet</h1>;
   }
-  console.log("Here !!!" + publishedGames)
+  
   if (publishedGames.length > 0) {
     publishedContent = (
       <ul className="gamesPublishedUl">
