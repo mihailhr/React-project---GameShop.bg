@@ -25,6 +25,15 @@ To run the app:
 
 2. Open the client in an integrated terminal
     2.1 npm i or npm install to install the necessary dependencies
-    2.1 npm run dev
+    2.2 npm run dev
 
 3. Access the local host in your browser - most likely http://localhost:5173/
+
+
+Instructions for publishing games:
+The instructions are described in the game creation page.
+All images and trailers must be entered as URLs
+
+
+Disclaimer:
+The LinkedIn and Facebook links which can be accessed through the about page are not related to the project and are only used for demonstration purposes

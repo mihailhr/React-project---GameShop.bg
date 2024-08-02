@@ -21,7 +21,7 @@ export default function BestSellers() {
 
     return (
         <div className="bestSellers">
-            <article className="title">Here are the current best sellers</article>
+            <article className="title"> <h1>Here are the current best sellers</h1></article>
             {allGames.length > 2 ? (
                 
                 <>
@@ -37,7 +37,7 @@ export default function BestSellers() {
                     <article className="secondPlace">
                     <img src={allGames[1].mainImage} alt="" />
                         <section className="info">
-                            <p>Finishing in a close second to the champion, {allGames[1]?.name} has attracted {allGames[1]?.buyers.length} buyers.</p>
+                            <p>Finishing in a close second to the champion, {allGames[1]?.name} has attracted a lot of buyers.</p>
                             <button onClick={() => navigate(`/catalog/${allGames[1]._id}`)}>Take a closer look</button>
                             
                         </section>
@@ -46,7 +46,7 @@ export default function BestSellers() {
                     <article className="thirdPlace">
                         <img src="/third place.png" alt="" />
                         <section className="info">
-                            <p>{allGames[2]?.name} is the bronze medalist with {allGames[2]?.buyers.length} buyers.</p>
+                            <p>{allGames[2].creator}{"'s"} {allGames[2]?.name} is the bronze medalist.</p>
                             <button onClick={() => navigate(`/catalog/${allGames[2]._id}`)}>Review</button>
                             
                         </section>

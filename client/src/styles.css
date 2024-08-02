@@ -420,8 +420,8 @@ align-items: center;}
 
 }
 .publishInfo{
-  width: 40vw;
-  height: 60vh;
+  width: 45vw;
+  height: 80vh;
   background-color: #1D597D;
   border-radius: 40px;
   color: white;
@@ -431,10 +431,22 @@ align-items: center;}
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
+}
+.publish textarea{
+  border-radius: 20px;
+  padding: 10px;
+  max-width: 500px;
+  min-width: 300px;
+  overflow: hidden;
+  min-height: 20px;
+  max-height: 30px;
+}
+textarea:invalid{
+  border: 5px solid orange;
 }
 .publishInfo h1{
-  font-size: 40px;
+  font-size: 27px;
   text-align: center;
 }
 input:invalid{
@@ -467,7 +479,7 @@ input:invalid{
 }
 .about{
   width: 100vw;
-  height: 150vh;
+  height: 160vh;
   
   background-color: orange;
 }
@@ -494,7 +506,7 @@ input:invalid{
 }
 .aboutLower .text{
   width: 60vw;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -533,6 +545,7 @@ border-radius: 20px;
   color: white;
   text-align: center;
   font-size: 30px;
+  padding: 10px;
 }
 .catalog .titleSp{
   width: 100vw;
