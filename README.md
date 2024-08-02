@@ -9,12 +9,16 @@ Registered users can publish their own games and depending on their authorizatio
 Initial setup is being performed for convenience -  it includes the creation of a few user accounts and games.
 
 Initial setup accounts that you can use (Of course you can register as well):
+
 username:"Ivan Stoyanov",password:88888888
+
 username:"Petar1234",password:password
+
 username:"GameShopCreator",password:gameshopPass
+
 username:"Gamer123",password:password2 --- No games uploaded
 
-In later commits the unnecessary  node modules will be deleted.
+
 To run the app:
 
 0. You need MongoDb
