@@ -1,5 +1,5 @@
 # React-project---GameShop.bg
-
+Проектът е изготвян с учебна цел и към момента не е в изцяло завършен вид.
 
 GameShop.bg - a React project created by Mihail Hristov
 
